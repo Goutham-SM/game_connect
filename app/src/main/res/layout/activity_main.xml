@@ -1,0 +1,149 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+    tools:context="com.goutham.connet.MainActivity">
+
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+
+    <GridLayout
+        android:id="@+id/table"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/board"
+        android:columnCount="3"
+        android:padding="10dp"
+        android:rowCount="3"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="6dp">
+
+        <ImageView
+            android:id="@+id/disk1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:scaleType="center"
+            android:adjustViewBounds="true"
+            android:src="@drawable/rsz_1red"
+
+            />
+
+        <ImageView
+            android:id="@+id/disk2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:scaleType="center"
+            android:layout_marginLeft="30dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/rsz_1red"
+            />
+        <!--android:layout_toRightOf="@id/disk1"-->
+
+
+        <ImageView
+            android:id="@+id/disk3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:scaleType="center"
+            android:layout_marginLeft="20dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/rsz_1red"
+            />
+         <!--android:layout_toRightOf="@id/disk2"-->
+
+
+     <ImageView
+         android:id="@+id/disk4"
+         android:layout_width="0dp"
+         android:layout_height="0dp"
+         android:layout_rowWeight="1"
+         android:layout_columnWeight="1"
+         android:scaleType="center"
+         android:adjustViewBounds="true"
+         android:src="@drawable/rsz_1red"
+
+         />
+
+     <ImageView
+         android:id="@+id/disk5"
+         android:layout_width="0dp"
+         android:layout_height="0dp"
+         android:layout_rowWeight="1"
+         android:layout_columnWeight="1"
+         android:scaleType="center"
+         android:layout_marginLeft="30dp"
+         android:adjustViewBounds="true"
+
+         android:onClick="dropIn"/>
+
+     <ImageView
+         android:id="@+id/disk6"
+         android:layout_width="0dp"
+         android:layout_height="0dp"
+         android:layout_rowWeight="1"
+         android:layout_columnWeight="1"
+         android:scaleType="center"
+         android:layout_marginLeft="20dp"
+         android:adjustViewBounds="true"
+         android:src="@drawable/rsz_1red"
+         />
+         <!--android:layout_toRightOf="@id/disk5"-->
+
+     <ImageView
+         android:id="@+id/disk7"
+         android:layout_width="0dp"
+         android:layout_height="0dp"
+         android:layout_rowWeight="1"
+         android:layout_columnWeight="1"
+         android:scaleType="center"
+         android:adjustViewBounds="true"
+         android:src="@drawable/rsz_1red"
+
+         />
+
+     <ImageView
+         android:id="@+id/disk8"
+         android:layout_width="0dp"
+         android:layout_height="0dp"
+         android:layout_rowWeight="1"
+         android:layout_columnWeight="1"
+         android:scaleType="center"
+         android:layout_marginLeft="30dp"
+         android:adjustViewBounds="true"
+         android:src="@drawable/rsz_1red"
+        />
+         <!--android:layout_toRightOf="@id/disk7"-->
+
+
+     <ImageView
+         android:id="@+id/disk9"
+         android:layout_width="0dp"
+         android:layout_height="0dp"
+         android:layout_rowWeight="1"
+         android:layout_columnWeight="1"
+         android:scaleType="center"
+         android:layout_marginLeft="20dp"
+         android:adjustViewBounds="true"
+         android:src="@drawable/rsz_1red"
+         />
+         <!--android:layout_toRightOf="@id/disk8"-->
+
+
+
+ </GridLayout>
+</RelativeLayout>
