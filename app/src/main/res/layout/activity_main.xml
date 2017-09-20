@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
 
 
-    tools:context="com.goutham.connet.MainActivity">
+    tools:context="com.goutham.connect.MainActivity">
 
 
     <!-- The primary full-screen view. This can be replaced with whatever view
@@ -14,42 +14,42 @@
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->
 
+
     <GridLayout
         android:id="@+id/table"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/board"
-        android:columnCount="3"
-        android:padding="10dp"
-        android:rowCount="3"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="6dp">
+        android:layout_alignParentTop="true"
+        android:background="@drawable/board"
+        android:columnCount="3"
+        android:foregroundGravity="bottom|center"
+        android:padding="10dp"
+        android:rowCount="3">
 
         <ImageView
             android:id="@+id/disk1"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:scaleType="center"
+            android:layout_rowWeight="1"
             android:adjustViewBounds="true"
-            android:src="@drawable/rsz_1red"
-
-            />
+            android:onClick="dropIn"
+            android:scaleType="centerInside"
+            android:tag="0" />
 
         <ImageView
             android:id="@+id/disk2"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:scaleType="center"
             android:layout_marginLeft="30dp"
+            android:layout_rowWeight="1"
             android:adjustViewBounds="true"
-            android:src="@drawable/rsz_1red"
-            />
+            android:onClick="dropIn"
+            android:scaleType="centerInside"
+            android:tag="1" />
         <!--android:layout_toRightOf="@id/disk1"-->
 
 
@@ -57,93 +57,120 @@
             android:id="@+id/disk3"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:scaleType="center"
             android:layout_marginLeft="20dp"
+            android:layout_rowWeight="1"
             android:adjustViewBounds="true"
-            android:src="@drawable/rsz_1red"
-            />
-         <!--android:layout_toRightOf="@id/disk2"-->
+            android:onClick="dropIn"
+            android:scaleType="centerInside"
+            android:tag="2" />
+        <!--android:layout_toRightOf="@id/disk2"-->
 
 
-     <ImageView
-         android:id="@+id/disk4"
-         android:layout_width="0dp"
-         android:layout_height="0dp"
-         android:layout_rowWeight="1"
-         android:layout_columnWeight="1"
-         android:scaleType="center"
-         android:adjustViewBounds="true"
-         android:src="@drawable/rsz_1red"
+        <ImageView
+            android:id="@+id/disk4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:adjustViewBounds="true"
+            android:onClick="dropIn"
+            android:scaleType="centerInside"
+            android:tag="3" />
 
-         />
+        <ImageView
+            android:id="@+id/disk5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="30dp"
+            android:layout_rowWeight="1"
+            android:adjustViewBounds="true"
+            android:onClick="dropIn"
+            android:scaleType="centerInside"
+            android:tag="4" />
 
-     <ImageView
-         android:id="@+id/disk5"
-         android:layout_width="0dp"
-         android:layout_height="0dp"
-         android:layout_rowWeight="1"
-         android:layout_columnWeight="1"
-         android:scaleType="center"
-         android:layout_marginLeft="30dp"
-         android:adjustViewBounds="true"
+        <ImageView
+            android:id="@+id/disk6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_rowWeight="1"
+            android:adjustViewBounds="true"
+            android:onClick="dropIn"
+            android:scaleType="centerInside"
+            android:tag="5" />
+        <!--android:layout_toRightOf="@id/disk5"-->
 
-         android:onClick="dropIn"/>
+        <ImageView
+            android:id="@+id/disk7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:adjustViewBounds="true"
+            android:onClick="dropIn"
+            android:scaleType="centerInside"
+            android:tag="6" />
 
-     <ImageView
-         android:id="@+id/disk6"
-         android:layout_width="0dp"
-         android:layout_height="0dp"
-         android:layout_rowWeight="1"
-         android:layout_columnWeight="1"
-         android:scaleType="center"
-         android:layout_marginLeft="20dp"
-         android:adjustViewBounds="true"
-         android:src="@drawable/rsz_1red"
-         />
-         <!--android:layout_toRightOf="@id/disk5"-->
-
-     <ImageView
-         android:id="@+id/disk7"
-         android:layout_width="0dp"
-         android:layout_height="0dp"
-         android:layout_rowWeight="1"
-         android:layout_columnWeight="1"
-         android:scaleType="center"
-         android:adjustViewBounds="true"
-         android:src="@drawable/rsz_1red"
-
-         />
-
-     <ImageView
-         android:id="@+id/disk8"
-         android:layout_width="0dp"
-         android:layout_height="0dp"
-         android:layout_rowWeight="1"
-         android:layout_columnWeight="1"
-         android:scaleType="center"
-         android:layout_marginLeft="30dp"
-         android:adjustViewBounds="true"
-         android:src="@drawable/rsz_1red"
-        />
-         <!--android:layout_toRightOf="@id/disk7"-->
+        <ImageView
+            android:id="@+id/disk8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="30dp"
+            android:layout_rowWeight="1"
+            android:adjustViewBounds="true"
+            android:onClick="dropIn"
+            android:scaleType="centerInside"
+            android:tag="7" />
+        <!--android:layout_toRightOf="@id/disk7"-->
 
 
-     <ImageView
-         android:id="@+id/disk9"
-         android:layout_width="0dp"
-         android:layout_height="0dp"
-         android:layout_rowWeight="1"
-         android:layout_columnWeight="1"
-         android:scaleType="center"
-         android:layout_marginLeft="20dp"
-         android:adjustViewBounds="true"
-         android:src="@drawable/rsz_1red"
-         />
-         <!--android:layout_toRightOf="@id/disk8"-->
+        <ImageView
+            android:id="@+id/disk9"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_rowWeight="1"
+            android:adjustViewBounds="true"
+            android:onClick="dropIn"
+            android:scaleType="centerInside"
+            android:tag="8" />
+        <!--android:layout_toRightOf="@id/disk8"-->
 
 
+    </GridLayout>
 
- </GridLayout>
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="top|center"
+        android:layout_centerInParent="true"
+        android:background="@android:color/holo_blue_light"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="reset"
+            android:text="Play Again"
+            android:textAlignment="center" />
+    </LinearLayout>
+
 </RelativeLayout>
