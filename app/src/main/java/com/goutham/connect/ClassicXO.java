@@ -1,19 +1,24 @@
 package com.goutham.connect;
 
+import android.content.Intent;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ClassicXO extends AppCompatActivity {
+public class ClassicXO extends AppCompatActivity implements  View.OnClickListener{
+
+
 
     int currPlayer=0;
     int[] coin={2,2,2,2,2,2,2,2,2};
     int[][] winStates={{0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{0,4,8},{2,4,6}};
+    int flag=0;
     public void dropIn(View view) {
 
         ImageView disk = (ImageView) view;
@@ -22,7 +27,7 @@ public class ClassicXO extends AppCompatActivity {
         int tapedCoin = Integer.parseInt(number);
 
 
-        if (coin[tapedCoin] == 2) {
+        if (coin[tapedCoin] == 2&&flag==0) {
             coin[tapedCoin] = currPlayer;
             if (tapedCoin <= 5)
                 disk.setTranslationY(-1000f);
@@ -39,7 +44,7 @@ public class ClassicXO extends AppCompatActivity {
             }
 
             if (tapedCoin <= 5)
-                disk.animate().translationYBy(1000f).rotation(300).setDuration(2500);
+                disk.animate().translationYBy(1000f).rotation(300).setDuration(1500);
             else
                 disk.animate().translationYBy(3000f).rotation(300).setDuration(2000);
 
@@ -51,23 +56,41 @@ public class ClassicXO extends AppCompatActivity {
                     if(coin[winPos[0]]==0){
                         Toast.makeText(ClassicXO.this, "YELLOW WINS!!!", Toast.LENGTH_LONG).show();
                         s="YELLOW WINS!!!";
-                        winMsg.setText(s);}
+                        winMsg.setText(s);flag=1;}
                     else if (coin[winPos[0]]==1){
                         Toast.makeText(ClassicXO.this, "RED WINS!!!", Toast.LENGTH_LONG).show();
                         s="RED WINS!!!";
-                        winMsg.setText(s);}
-
-                    LinearLayout layout=(LinearLayout) findViewById(R.id.layout1);
-                    layout.setVisibility(View.VISIBLE);
-
+                        winMsg.setText(s);flag=1;}
+                    if(flag==1) {
+                        LinearLayout layout = (LinearLayout) findViewById(R.id.layout1);
+                        layout.setVisibility(View.VISIBLE);
+                        break;
+                    }
                 }
             }
         }
 
     }
+
+
+    public void reset(View view){
+
+    }
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Button btn=(Button) findViewById(R.id.button10);
+        btn.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent i=new Intent(ClassicXO.this,StartPage.class);
+        startActivity(i);
+
     }
 }

@@ -12,6 +12,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
+        android:textColor="#000000"
+
         android:textSize="40sp"
         android:text="How to Play?" />
     <TextView
@@ -34,6 +36,8 @@
         android:fontFamily="monospace"
         android:layout_alignLeft="@id/textView4"
         android:layout_below="@id/textView4"
+        android:textColor="#000000"
+
         android:text="This is similar to the classic X and O game instead
         there are two colored coins a red one and a yellow one . It is a two player game
         and the first player will take yellow(similar to x) and the next player will take red
@@ -60,6 +64,8 @@
         android:fontFamily="monospace"
         android:layout_alignLeft="@id/textView6"
         android:layout_below="@id/textView6"
+        android:textColor="#000000"
+
         android:text="This is an enhanced version of Classic X and O game where
         there are two colored coins a red one and a yellow one . It is a two player game
         and the first player will take yellow(similar to x) and the next player will take red
@@ -88,6 +94,7 @@
         android:fontFamily="monospace"
         android:layout_alignLeft="@id/textView8"
         android:layout_below="@id/textView8"
+        android:textColor="#000000"
         android:text="This is the Classic version of the board game Connect.Where there will be two Coins
         or coumters which will be dropped from the top and it reaches to the bottom of the board until
         it reaches the filled slot or the end of the board.As you tap on the respective boxes the coin will drop down and

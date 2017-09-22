@@ -10,6 +10,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
+        android:textColor="#000000"
+
         android:text="Choose a Mode"
         android:textSize="50sp"/>
 

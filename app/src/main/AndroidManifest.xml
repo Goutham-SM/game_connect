@@ -16,6 +16,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Help"
+            android:label="connect"
+            />
+        <activity android:name=".ClassicXO"
+        android:label="connect"
+            />
+        <activity android:name=".Fun_Mode"
+            android:label="connect"
+            />
+        <activity android:name=".StartPage"
+            android:label="connect"/>
     </application>
 
 </manifest>
