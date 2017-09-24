@@ -47,31 +47,47 @@ public class Fun_Mode extends MainActivity implements View.OnClickListener{
                 disk.animate().translationYBy(3000f).rotation(300).setDuration(2000);
             //}
         }
+        TextView winMsg = (TextView) findViewById(R.id.editText);
+        String s = winMsg.toString();
         for (int[] winPos : winStates) {
-            TextView winMsg = (TextView) findViewById(R.id.editText);
-            String s = winMsg.toString();
+
             if (coin[winPos[0]] == coin[winPos[1]] && coin[winPos[1]] == coin[winPos[2]] && coin[winPos[0]] != 2) {
                 if (coin[winPos[0]] == 0) {
                     Toast.makeText(Fun_Mode.this, "YELLOW WINS!!!", Toast.LENGTH_LONG).show();
                     s = "YELLOW WINS!!!";
                     winMsg.setText(s);
-                    flag=1;
+                    flag = 1;
 
                 } else if (coin[winPos[0]] == 1) {
                     Toast.makeText(Fun_Mode.this, "RED WINS!!!", Toast.LENGTH_LONG).show();
                     s = "RED WINS!!!";
                     winMsg.setText(s);
-                    flag=1;
+                    flag = 1;
 
                 }
+            }
+        }
+        int count=0;
+        for(int coins:coin)
+        {
+            if(coins!=2)
+                count++;
+            System.out.println(coins);
+        }
+        if(count==9){
+            s="There Is no winner!Try Again";
+            Toast.makeText(Fun_Mode.this, "There Is no winner!Try Again" , Toast.LENGTH_LONG).show();
+            winMsg.setText(s);
+            flag=1;
+        }
                 if(flag==1) {
                     LinearLayout layout = (LinearLayout) findViewById(R.id.layout1);
                     layout.setVisibility(View.VISIBLE);
-                    break;
-                }
-            }
 
-        }
+                }
+
+
+
     }
 
     @Override

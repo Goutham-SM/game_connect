@@ -47,27 +47,47 @@ public class ClassicXO extends AppCompatActivity implements  View.OnClickListene
                 disk.animate().translationYBy(1000f).rotation(300).setDuration(1500);
             else
                 disk.animate().translationYBy(3000f).rotation(300).setDuration(2000);
+            TextView winMsg = (TextView) findViewById(R.id.editText);
+            String s = winMsg.toString();
 
-            for(int[] winPos:winStates)
-            {
-                TextView winMsg = (TextView) findViewById(R.id.editText);
-                String s=winMsg.toString();
-                if(coin[winPos[0]]==coin[winPos[1]]&&coin[winPos[1]]==coin[winPos[2]]&&coin[winPos[0]]!=2) {
-                    if(coin[winPos[0]]==0){
+            for(int[] winPos:winStates) {
+
+                if (coin[winPos[0]] == coin[winPos[1]] && coin[winPos[1]] == coin[winPos[2]] && coin[winPos[0]] != 2) {
+                    if (coin[winPos[0]] == 0) {
                         Toast.makeText(ClassicXO.this, "YELLOW WINS!!!", Toast.LENGTH_LONG).show();
-                        s="YELLOW WINS!!!";
-                        winMsg.setText(s);flag=1;}
-                    else if (coin[winPos[0]]==1){
+                        s = "YELLOW WINS!!!";
+                        winMsg.setText(s);
+                        flag = 1;
+                        break;
+                    } else if (coin[winPos[0]] == 1) {
                         Toast.makeText(ClassicXO.this, "RED WINS!!!", Toast.LENGTH_LONG).show();
-                        s="RED WINS!!!";
-                        winMsg.setText(s);flag=1;}
-                    if(flag==1) {
-                        LinearLayout layout = (LinearLayout) findViewById(R.id.layout1);
-                        layout.setVisibility(View.VISIBLE);
+                        s = "RED WINS!!!";
+                        winMsg.setText(s);
+                        flag = 1;
                         break;
                     }
                 }
             }
+                    int count=0;
+                    for(int coins:coin)
+                    {
+                        if(coins!=2)
+                            count++;
+                        System.out.println(coins);
+                    }
+                    if(count==9){
+                        s="There Is no winner!Try Again";
+                        Toast.makeText(ClassicXO.this, "There Is no winner!Try Again" , Toast.LENGTH_LONG).show();
+                        winMsg.setText(s);
+                        flag=1;
+                    }
+                    if(flag==1) {
+                        LinearLayout layout = (LinearLayout) findViewById(R.id.layout1);
+                        layout.setVisibility(View.VISIBLE);
+
+                    }
+
+
         }
 
     }
@@ -75,6 +95,10 @@ public class ClassicXO extends AppCompatActivity implements  View.OnClickListene
 
     public void reset(View view){
 
+        currPlayer=0;
+        int []coin={2,2,2,2,2,2,2,2,2};
+        flag=0;
+        dropIn(view);
     }
 
 
