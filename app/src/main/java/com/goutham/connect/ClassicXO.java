@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -23,7 +24,7 @@ public class ClassicXO extends AppCompatActivity implements  View.OnClickListene
 
         ImageView disk = (ImageView) view;
         String number = disk.getTag().toString();
-        System.out.println(number);
+        //System.out.println(number);
         int tapedCoin = Integer.parseInt(number);
 
 
@@ -34,6 +35,7 @@ public class ClassicXO extends AppCompatActivity implements  View.OnClickListene
             else
                 disk.setTranslationY(-3000f);
 
+
             if (currPlayer == 0) {
                 disk.setImageResource(R.drawable.rsz_yellows);
                 currPlayer = 1;
@@ -43,10 +45,13 @@ public class ClassicXO extends AppCompatActivity implements  View.OnClickListene
                 //coin[coinNumber] = currPlayer;
             }
 
+            //disk.animate().setUpdateListener(1000f);
+           // System.out.println(tapedCoin);
             if (tapedCoin <= 5)
                 disk.animate().translationYBy(1000f).rotation(300).setDuration(1500);
             else
                 disk.animate().translationYBy(3000f).rotation(300).setDuration(2000);
+            System.out.println(disk.getAnimation());
             TextView winMsg = (TextView) findViewById(R.id.editText);
             String s = winMsg.toString();
 
@@ -73,7 +78,7 @@ public class ClassicXO extends AppCompatActivity implements  View.OnClickListene
                     {
                         if(coins!=2)
                             count++;
-                        System.out.println(coins);
+                        //System.out.println(coins);
                     }
                     if(count==9){
                         s="There Is no winner!Try Again";
@@ -94,11 +99,22 @@ public class ClassicXO extends AppCompatActivity implements  View.OnClickListene
 
 
     public void reset(View view){
+        LinearLayout lay =(LinearLayout) findViewById(R.id.layout1);
+        lay.setVisibility(View.INVISIBLE);
 
         currPlayer=0;
-        int []coin={2,2,2,2,2,2,2,2,2};
         flag=0;
-        dropIn(view);
+        for(int i=0;i<coin.length;i++)
+            coin[i]=2;
+
+        GridLayout grid = (GridLayout) findViewById(R.id.table);
+
+        for(int i=0;i<grid.getChildCount();i++)
+        {
+            ((ImageView) grid.getChildAt(i)).setImageResource(0);
+
+        }
+
     }
 
 

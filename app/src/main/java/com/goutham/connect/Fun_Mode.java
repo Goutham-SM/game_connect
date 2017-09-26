@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -87,6 +88,26 @@ public class Fun_Mode extends MainActivity implements View.OnClickListener{
                 }
 
 
+
+    }
+
+    public void reset(View view){
+
+        LinearLayout lay =(LinearLayout) findViewById(R.id.layout1);
+        lay.setVisibility(View.INVISIBLE);
+
+        currPlayer=0;
+        flag=0;
+        for(int i=0;i<coin.length;i++)
+            coin[i]=2;
+
+        GridLayout grid = (GridLayout) findViewById(R.id.table);
+
+        for(int i=0;i<grid.getChildCount();i++)
+        {
+            ((ImageView) grid.getChildAt(i)).setImageResource(0);
+
+        }
 
     }
 
