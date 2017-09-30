@@ -80,7 +80,7 @@ public class ClassicXO extends AppCompatActivity implements  View.OnClickListene
                             count++;
                         //System.out.println(coins);
                     }
-                    if(count==9){
+                    if(count==9&&flag!=1){
                         s="There Is no winner!Try Again";
                         Toast.makeText(ClassicXO.this, "There Is no winner!Try Again" , Toast.LENGTH_LONG).show();
                         winMsg.setText(s);
@@ -112,6 +112,7 @@ public class ClassicXO extends AppCompatActivity implements  View.OnClickListene
         for(int i=0;i<grid.getChildCount();i++)
         {
             ((ImageView) grid.getChildAt(i)).setImageResource(0);
+            ( grid.getChildAt(i)).animate().rotation(0);
 
         }
 
